@@ -1,0 +1,20 @@
+{% extends "layouts/mylayout.html" %}
+
+{% block datamanipulation %}
+    <h1>Feather Database Manipulation <img src="static/pictures/database.png" alt="database"></h1>
+    </br>
+    <p><h4>What do you want to do?</h4></p>
+    </br></br>
+    <p>
+        <b><a class="manipulation" href="{{ url_for('data_manipulation_insert') }}" ><img src="/static/pictures/add.png" alt="addbutton">   Add a new record.</a></b>
+    </p>
+        </br></br>
+    <p>
+        <b><a class="manipulation" href="{{ url_for('data_manipulation_delete') }}" ><img src="/static/pictures/remove.png" alt="deletebutton">   Delete a record.</a></b>
+    </p>
+    </br></br>
+    <p id="querybutton">
+        <a id="manipulationreturn" href="{{ url_for('login') }}"><img src="static/pictures/back.png" alt="a return icon">    Return</a>
+        <a href="{{ url_for('index') }}"><img src="static/pictures/databasequery.png" alt="a query icon">    Query</a>
+    </p>
+{% endblock %}

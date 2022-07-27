@@ -1,0 +1,32 @@
+{% extends "layouts/mylayout.html" %}
+
+{% block manipulationdelete %}
+    <h1>Feather Database Data Deletion <img src="static/pictures/database.png"></h1>
+    </br>
+    <p><h4>Welcome to the data manipulation page for deletion!</h4></p>
+    </br></br>
+    <p><h4>Fill in the form and submit to delete an entry from the database.</h4></p>
+    </br></br>
+    <p>
+        <form method="post">
+            <label> Column </label>
+                <input list="column_list" name="column" required>
+                    <datalist id="column_list">
+                        <option value="German Denotation">
+                        <option value="English Denotation">
+                        <option value="Latin Denotation">
+                    </datalist>
+                </br></br>
+            <label for="row"> Denotation </label>
+            <input type="text" name="element" id="row">
+            </br></br></br>
+            <input class="submit" type="submit" value="Delete">
+            </br></br>
+            <div class="errordiv">
+                <b>{{ msg }}</b>
+            </div>
+            </br></br></br></br>
+        </form>
+    </p>
+        <a href="{{ url_for('datamanipulation') }}"> <img src="static/pictures/back.png" alt="a return icon">   Return</a>
+{% endblock %}

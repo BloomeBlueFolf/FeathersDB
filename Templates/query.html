@@ -1,0 +1,42 @@
+{% extends "layouts/mylayout.html" %}
+
+{% block query %}
+    <h1>Feather Database Content <img src="static/pictures/database.png"></h1>
+    </br>
+    <h4>Currently there are documented feathers of <em><b>{{ length }}</b></em> different birds.</h4>
+    </br>
+        {% for bird in list_birds %}
+            <p>
+            <div id="query">
+                <table>
+                    <tr>
+                        <th>Category </th>
+                        <th>Record </th>
+                    </tr>
+                    <tr>
+                        <td>GER: </td>
+                        <td><b>{{bird.name_GER}} </b></td>
+                    </tr>
+                    <tr>
+                        <td>ENG: </td>
+                        <td><b>{{ bird.name_ENG }} </b></td>
+                    </tr>
+                    <tr>
+                        <td>LAT: </td>
+                        <td><b>{{ bird.name_LAT }} </b></td>
+                    </tr>
+                    <tr>
+                        <td>Red List Category: </td>
+                        <td><b>{{ bird.red_list_status }} </b></td>
+                    </tr>
+                </table>
+            </div>
+            </br>
+            </p>
+        {% endfor %}
+
+        <div id="datamanipulation">
+            <a href="{{ url_for('login') }}"><img src="/static/pictures/tool.png" alt="toolDataManipulation">    Data Manipulation</a>
+        </div>
+
+{% endblock %}

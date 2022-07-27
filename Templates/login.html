@@ -1,0 +1,24 @@
+{% extends "layouts/mylayout.html" %}
+
+{% block login %}
+    <h1>Feather Database Login <img src="static/pictures/database.png"></h1>
+    </br>
+    <p><h4>Please login to the database manipulation page.</h4></p>
+    </br></br>
+    <form method="post">
+        <label for="username"><img src="static/pictures/user.png" alt="usericon">  Username: </label>
+        <input type="text" name="username" id="username" pattern="[A-Za-z0-9!.+-_]{2,10}" title="Invalid Input!">
+        </br></br>
+        <label for="password"><img src="static/pictures/password.png" alt="lockicon">  Password: </label>
+        <input type="password" name="password" id="password" pattern="[A-Za-z0-9!.+-_]{2,15}" title="Invalid Input!">
+        </br></br></br>
+        <input class="submit" type="submit" value="Login">
+        </br></br>
+        </br></br></br></br>
+    </form>
+    <div class="errordiv">
+        <b>{{ error }}</b>
+    </div>
+    <a href="{{ url_for('index') }}"><img src="static/pictures/back.png" alt="a return icon">    Return</a>
+    </p>
+{% endblock %}

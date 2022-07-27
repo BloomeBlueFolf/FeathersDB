@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='static/lib/style.css'>
+        <p>
+        <title>{{ mytitle }}</title>
+        </p>
+    </head>
+    <body>
+            <p>
+                {% block query %}{% endblock %}
+            </p>
+            <p>
+                {% block login %}{% endblock %}
+            </p>
+            <p>
+                {% block datamanipulation %}{% endblock %}
+            </p>
+            <p>
+                {% block manipulationinsert %}{% endblock %}
+            </p>
+            <p>
+                {% block manipulationdelete %}{% endblock %}
+            </p>
+            <p id="impressum">
+                Frontend and Backend created by Bloome BlueFolf
+            </p>
+            <p id="credits">
+                {% for element in credits %}
+                {{ element }}</br>
+                {% endfor %}
+            </p>
+    </body>
+</html>

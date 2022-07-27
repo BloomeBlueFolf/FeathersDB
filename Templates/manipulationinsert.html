@@ -1,0 +1,44 @@
+{% extends "layouts/mylayout.html" %}
+
+{% block manipulationinsert %}
+    <h1>Feather Database Data Insertion <img src="static/pictures/database.png"></h1>
+    </br>
+    <p><h4>Welcome to the data manipulation page for insertion!</h4></p>
+    </br></br>
+    <p><h4>Fill in the form and submit to add a new entry to the database.</h4></p>
+    </br></br>
+    <p>
+        <form method="post">
+            <label for="column1">Name (GER): </label>
+            <input type="text" name="name_GER" id="column1" pattern="[A-Za-z {2,50}" title="Invalid Input!" required>
+            </br></br>
+            <label for="column2">Name (ENG): </label>
+            <input type="text" name="name_ENG" id="column2" pattern="[A-Za-z {2,50}" title="Invalid Input!" required>
+            </br></br>
+            <label for="column3">Name (LAT): </label>
+            <input type="text" name="name_LAT" id="column3" pattern="[A-Za-z {2,50}" title="Invalid Input!" required>
+            </br></br>
+            <label>Category Red List:  </label>
+            <input list="red_list_category" name="red_list_category" required>
+                <datalist id="red_list_category">
+                      <option value="Not Evaluated">
+                      <option value="Data Deficient">
+                      <option value="Least Concern">
+                      <option value="Near Threatened">
+                      <option value="Vulnerable">
+                      <option value="Endangered">
+                      <option value="Critically Endangered">
+                      <option value="Extinct in the Wild">
+                      <option value="Extinct">
+                </datalist>
+            </br></br></br>
+            <input class="submit" type="submit" value="Add Record">
+            </br></br>
+            <div class="errordiv">
+                <b>{{ msg }}</b>
+            </div>
+            </br></br></br></br>
+        </form>
+    </p>
+        <a href="{{ url_for('datamanipulation') }}"><img src="static/pictures/back.png" alt="a return icon">   Return</a>
+{% endblock %}
